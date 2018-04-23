@@ -39,6 +39,7 @@ public class DataHandlerTest{
         Appt appt3 = new Appt(0, 0, 15, 12, 2018, "Vacation", "Off to Mexico", "xyz@gmail.com");
         Appt appt4 = new Appt(0, 0, 1, 1, 2019, "NYE", "Time to party", "xyz@gmail.com");
         Appt appt5 = new Appt(0, 0, 15, 4, 2019, "Tax Day", "Do your taxes", "xyz@gmail.com");
+        Appt appt6 = new Appt(0, 0, 1, 20, -100, "negative", "test", "xyz@gmail.com");
         
         appt2.setRecurrence(null, 1, 365, 100);
         appt4.setRecurrence(null, 1, 365, 10000);
@@ -49,11 +50,13 @@ public class DataHandlerTest{
         appt3.setValid();
         appt4.setValid();
         appt5.setValid();
+        appt6.setValid();
         
         dh1.saveAppt(appt1);
         dh1.saveAppt(appt2);
         dh1.saveAppt(appt3);
         dh1.saveAppt(appt4);
         dh1.saveAppt(appt5);
+        dh1.saveAppt(appt6);
 	}
 }
