@@ -137,7 +137,7 @@ public class DataHandler {
             }
             
             //Make sure that the first day is before the last day
-            if (firstDay.before(lastDay)) {
+            if (!firstDay.before(lastDay)) {
                 throw new DateOutOfRangeException("Second date specified is not " +
                     "before the first date specified.");
             }
@@ -204,7 +204,7 @@ public class DataHandler {
                 //Construct a new Appointment object with the data found
                 Appt appt = new Appt( 
                             Integer.parseInt((String)fields.get("startHour")),
-                            Integer.parseInt((String)fields.get("startMinute")),
+                            Integer.parseInt((String)fields.get("startHour")),
                             Integer.parseInt((String)fields.get("startDay")),
                             Integer.parseInt((String)fields.get("startMonth")),
                             Integer.parseInt((String)fields.get("startYear")),
