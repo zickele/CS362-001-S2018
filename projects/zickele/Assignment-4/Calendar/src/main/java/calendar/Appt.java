@@ -62,10 +62,10 @@ public class Appt{
     public static final int RECUR_BY_MONTHLY = 2;
     
     /** Used for setting appointments to recur yearly */
-    public static final int RECUR_BY_YEARLY = 5;
+    public static final int RECUR_BY_YEARLY = 3;
     
     /** Used for setting appointments to recur forever */
-    public static final int RECUR_NUMBER_FOREVER = 0;
+    public static final int RECUR_NUMBER_FOREVER = 1000;
     
     /** Used for setting appointments to never recur */
     public static final int RECUR_NUMBER_NEVER = 0;
@@ -167,13 +167,13 @@ public class Appt{
      */
 	public void setValid() {
 
-		if (startMonth < 0 || startMonth > 14)
+		if (startMonth < 1 || startMonth > 12)
 			this.valid = false;
-		else if (startHour < 0 || startHour > 25)
+		else if (startHour < 0 || startHour > 23)
 			this.valid = false;
-		else if (startMinute < 0 || startMinute > 99)
+		else if (startMinute < 0 || startMinute > 59)
 			this.valid = false;
-		else if (startYear <= -1000)
+		else if (startYear <= 0)
 			this.valid = false;
 		else {
 			int NumDaysInMonth = CalendarUtil.NumDaysInMonth(startYear, startMonth - 1);
